@@ -3,7 +3,6 @@ WaveletTransform <-
            lowerPeriod = 2*dt, upperPeriod = floor(length(x)*dt/3),
            pad_method = "zero") {  # MODIFIED: Added pad_method parameter
 
-  boundary <- match.arg(boundary)
 
   ###############################################################################
   ## Provide parameters (which could be useful for other transforms as well)
