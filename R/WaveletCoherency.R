@@ -2,7 +2,7 @@ WaveletCoherency <-
 function(x, y, dt = 1, dj = 1/20,
          lowerPeriod = 2*dt, upperPeriod = floor(length(x)*dt/3),
          pad_method = "zero",  # MODIFIED: Added pad_method parameter
-         window.type.t=1, window.type.s=1, window.size.t=5, window.size.s=1/4,){
+         window.type.t=1, window.type.s=1, window.size.t=5, window.size.s=1/4){
 
   #############################################################################
   ## compute wavelet transforms, retrieve results
