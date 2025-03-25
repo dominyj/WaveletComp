@@ -1,15 +1,11 @@
-Package: WaveletComp
-Version: 1.1
-Date: 2018-03-18
-Title: Computational Wavelet Analysis
-Author: Angi Roesch <angi@angi-stat.com> and Harald Schmidbauer <harald@hs-stat.com>
-Maintainer: Angi Roesch <angi@angi-stat.com>
-Description: Wavelet analysis and reconstruction of time series, cross-wavelets and phase-difference (with filtering options), significance with simulation algorithms.
+Package: WaveletCompMod
+Version: 1.1.1
+Date: 2025-03-25
+Title: Computational Wavelet Analysis with Enhanced Padding Methods
+Author: Angi Roesch [aut], Harald Schmidbauer [aut], Jonas Dominy [aut, cre]
+Description: A modified version of the WaveletComp package for wavelet analysis and reconstruction of time series, cross-wavelets, and phase-difference analysis. This version adds additional padding methods, including MATLAB-style reflection and combined reflection-zero padding, to improve wavelet transform accuracy.
 Depends: R (>= 2.10)
 License: GPL-2
 NeedsCompilation: no
-Repository: CRAN
-URL: Guide booklet at
-        http://www.hs-stat.com/projects/WaveletComp/WaveletComp_guided_tour.pdf
-Packaged: 2018-03-18 14:09:15 UTC; angi
-Date/Publication: 2018-03-18 14:31:53 UTC
+Repository: GitHub
+URL: https://github.com/dominyj/WaveletCompMod
