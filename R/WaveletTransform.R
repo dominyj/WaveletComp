@@ -51,7 +51,7 @@ WaveletTransform <-
         reflect.length <- floor(pad.length/2)
         left_reflect <- x[reflect.length:1]
         right_reflect <- x[series.length:(series.length-reflect.length+1)]
-        xpad <- c(x, right_reflect, left_reflect)
+        xpad <- c(left_reflect, x, right_reflect)
 
       } else {
         stop("Unknown padding method. Use 'zero', 'reflection', or 'reflection_zero'.")
@@ -80,7 +80,12 @@ WaveletTransform <-
       }
 
       # Cut out the wavelet transform
-      wave = wave[,1:series.length]
+      if(pad_method == "reflection"){
+        wave = wave[,length(left_reflect)+1:series.length]
+      } else{
+        wave = wave[,1:series.length]
+      }
+
       return(wave)
     }
 
