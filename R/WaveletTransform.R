@@ -10,7 +10,9 @@ WaveletTransform <-
     # Original length and length of zero padding:
     series.length = length(x)
     pot2 = trunc(log2(series.length) + 0.5)
-    pad.length = 2^(pot2+2)-series.length # MODIFIED: extend pad.length to second next power of 2
+    # pad.length = 2^(pot2+1)-series.length
+    # pad.length = max(2^(pot2+1)-series.length, length(x)) # MODIFIED:
+    pad.length = series.length
 
     # Define central angular frequency omega0 and fourier factor:
     omega0 = 6
@@ -48,10 +50,8 @@ WaveletTransform <-
 
       } else if (pad_method == "reflection") {
         # Reflection padding
-        reflect.length <- floor(pad.length/2)
-        left_reflect <- x[reflect.length:1]
-        right_reflect <- x[series.length:(series.length-reflect.length+1)]
-        xpad <- c(x, right_reflect, left_reflect)
+        reflected_signal <- rev(x)  # The entire signal reversed
+        xpad <- c(x, reflected_signal)  # Original followed by reversed
 
       } else {
         stop("Unknown padding method. Use 'zero', 'reflection', or 'reflection_zero'.")
